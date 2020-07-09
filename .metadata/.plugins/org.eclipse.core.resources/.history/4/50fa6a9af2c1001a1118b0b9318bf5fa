@@ -1,7 +1,6 @@
 package com.biz.callor.score.service;
 
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,12 +42,15 @@ public class ScoreServiceImplV1 implements Scoreinterface
 				System.out.println("숫자만 입력가능");
 				return false;
 			}
+		
+			
+			vo.setNum(intN);
+			
+			if(intN > 100 || intN < 0)
+				return false;
 					
 			switch (i) 
-			{
-				case 0: // 학번
-					vo.setNum(intN);
-					break;
+			{		
 				case 1: // 국어
 					vo.setKor(intN);
 					break;
@@ -62,7 +64,7 @@ public class ScoreServiceImplV1 implements Scoreinterface
 					break;
 			}
 		}
-	
+		this.cloe();
 		scoreList.add(vo);
 		return true;
 	}
@@ -88,7 +90,6 @@ public class ScoreServiceImplV1 implements Scoreinterface
 		System.out.println("\t\t\t학생 성적 목록표");
 		System.out.println("=================================================");
 		System.out.print("학번\t 국어\t 영어\t 수학\t 총점\t 평균\t\n");
-		String txt = "";
 		for(ScoreVO one : scoreList)
 		{
 			System.out.print(one.getNum()  + "\t" +
@@ -98,33 +99,38 @@ public class ScoreServiceImplV1 implements Scoreinterface
 						     one.getSum()  + "\t" + 
 						     one.getAvg()  + "\n");
 		}
-		
 	}
 
 	@Override
 	public void ScoreSave() 
 	{
-		String fileName = "src/com/biz/callor/score/config/ScoreList.txt"; 
-		
+		BufferedWriter fw = null;
+		String filePath = "src/com/biz/callor/score/config/ScoreList.txt"; 
 		String txt = "";
 		
+		for(ScoreVO one : scoreList)
+		{
+			txt +=   one.getNum()  + "\t" +
+					 one.getKor()  + "\t" + 
+				     one.getEng()  + "\t" + 
+				     one.getMath() + "\t" + 
+				     one.getSum()  + "\t" + 
+				     one.getAvg()  + "\n";
+		}
+
 		try 
 		{
-			BufferedWriter fw = new BufferedWriter(new FileWriter(fileName, true));
-            
+			fw = new BufferedWriter(new FileWriter(filePath, true));
             fw.write(txt);
-            fw.flush();
+            //fw.flush();
             fw.close();
-			
+
 		} 
-		catch (FileNotFoundException  e)
+		catch (Exception e) 
 		{
-			
+			System.out.println(filePath + " 파일을 만들수 없음!");
+			return;
 		}
-		
 	}
-	
-	
-	
 
 }

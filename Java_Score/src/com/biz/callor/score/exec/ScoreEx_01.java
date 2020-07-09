@@ -32,7 +32,6 @@ public class ScoreEx_01
 				continue;
 			}
 		
-			
 			switch (n) 
 			{
 			case 1:
@@ -45,9 +44,6 @@ public class ScoreEx_01
 			case 2:
 				scoreService.scoreList();
 				break;
-				
-			case 3:
-				return;
 			}
 			
 		}

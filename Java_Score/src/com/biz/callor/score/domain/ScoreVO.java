@@ -2,17 +2,17 @@ package com.biz.callor.score.domain;
 
 public class ScoreVO 
 {
-	private int num;
+	private String num;
 	private int kor;
 	private int eng;
 	private int math;
 	private int sum;
-	private int avg;
+	private float avg;
 	
-	public int getNum() {
+	public String getNum() {
 		return num;
 	}
-	public void setNum(int num) {
+	public void setNum(String num) {
 		this.num = num;
 	}
 	public int getKor() {
@@ -39,10 +39,10 @@ public class ScoreVO
 	public void setSum(int sum) {
 		this.sum = sum;
 	}
-	public int getAvg() {
+	public float getAvg() {
 		return avg;
 	}
-	public void setAvg(int avg) {
+	public void setAvg(float avg) {
 		this.avg = avg;
 	}
 }
