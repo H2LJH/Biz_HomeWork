@@ -1,0 +1,6 @@
+package com.biz.callor.score.service;
+
+public interface Scoreinterface 
+{
+	
+}
