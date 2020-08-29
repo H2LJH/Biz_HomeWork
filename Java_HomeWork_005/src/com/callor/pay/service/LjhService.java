@@ -22,6 +22,9 @@ public class LjhService
 		
 		for(int i=0; i <money.length; ++i)
 		{
+			if(temp <= 0)
+			   break;
+			
 			ans = temp / money[i];
 			moneyList[i] = ans;
 			temp %= money[i];
