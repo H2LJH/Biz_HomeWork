@@ -1,6 +1,0 @@
-package com.biz.callor.score.config;
-
-public class ScoreConfig 
-{
-	public final static int subject = 3;
-}
