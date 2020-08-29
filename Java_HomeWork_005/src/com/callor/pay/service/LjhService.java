@@ -32,9 +32,9 @@ public class LjhService
 	{
 		System.out.println("=====================");
 		System.out.printf("5만원권 : %d\n1만원권 : %d\n5천원권 : %d\n1천원권 : %d\n5백원권 : %d\n1백원권 : %d\n50원권  : %d\n10원권  : %d\n", moneyList[0],moneyList[1],
-																																			  moneyList[2],moneyList[3],
-																																			  moneyList[4],moneyList[4],
-																																			  moneyList[5],moneyList[6]);
+																		  moneyList[2],moneyList[3],
+																		  moneyList[4],moneyList[4],
+																		  moneyList[5],moneyList[6]);
 		System.out.println("=====================");
 	}
 	
