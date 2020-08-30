@@ -34,10 +34,8 @@ public class LjhService
 	public void list()
 	{
 		System.out.println("=====================");
-		System.out.printf("5만원권 : %d\n1만원권 : %d\n5천원권 : %d\n1천원권 : %d\n5백원권 : %d\n1백원권 : %d\n50원권  : %d\n10원권  : %d\n", moneyList[0],moneyList[1],
-																		  moneyList[2],moneyList[3],
-																		  moneyList[4],moneyList[4],
-																		  moneyList[5],moneyList[6]);
+		for(int i=0; i<moneyList.length; ++i)
+			System.out.printf("%d원 권 : %d\n", money[i], moneyList[i]);
 		System.out.println("=====================");
 	}
 	
