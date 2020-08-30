@@ -6,11 +6,12 @@ package com.callor.pay.service;
 
 public class LjhService 
 {
-	private final int[] moneyArr = { 50000, 10000, 5000, 1000, 500, 100, 50, 10 };
+	private final int[] moneyArr;
 	private int[] moneyListArr;
 	
 	public LjhService() 
 	{
+		moneyArr = new int []{ 50000, 10000, 5000, 1000, 500, 100, 50, 10 };
 		moneyListArr = new int[moneyArr.length];
 	}
 		
